@@ -47,7 +47,3 @@ set(SOURCES
 # executable
 add_executable(advent22 ${SOURCES})
 target_link_libraries(advent22 ${LIBRARIES})
-
-# tests
-enable_testing()
-add_subdirectory(test)
