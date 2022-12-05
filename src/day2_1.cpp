@@ -3,11 +3,13 @@
 
 using namespace std;
 
-int score_table[3][3] = {
+namespace {
+int score_table[3][3] = {  // [your_move][op_move]
     {3, 0, 6},
     {6, 3, 0},
     {0, 6, 3},
 };
+}
 
 /// @brief Calculate score for strategy
 /// https://adventofcode.com/2022/day/2
