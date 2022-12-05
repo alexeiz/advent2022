@@ -5,7 +5,7 @@
 ```shell
 $ mkdir build
 $ cd build
-$ conan install ..
+$ conan install .. --build=fmt -s build_type=Debug
 
 # make vscode configure automatically
 $ cd ..
