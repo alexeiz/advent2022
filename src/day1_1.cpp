@@ -1,12 +1,13 @@
 #include "common.hpp"
+#include "puzzle_reg.hpp"
 #include "day1.hpp"
 
 using namespace std;
 
-/// @brief Calculate maximum calories
+namespace {
+/// Calculate maximum calories.
 /// https://adventofcode.com/2022/day/1
-void day1_1()
-{
+puzzle_reg _{"1.1", []{
     int max_cal = 0;
     int cur_cal = 0;
     for (auto cal_v: day1::calories)
@@ -21,4 +22,5 @@ void day1_1()
     }
 
     fmt::print(cout, "max calories: {}\n", max_cal);
+}};
 }

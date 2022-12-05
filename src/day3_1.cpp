@@ -1,11 +1,14 @@
 #include "common.hpp"
+#include "puzzle_reg.hpp"
 #include "day3.hpp"
 
 using namespace std;
 namespace views = ranges::views;
 
-void day3_1()
-{
+namespace {
+/// Calculate priority of misplaced items.
+/// https://adventofcode.com/2022/day/3
+puzzle_reg _{"3.1", []{
     int total_pri = 0;
     for (string_view rs: day3::rucksacks)
     {
@@ -29,4 +32,5 @@ void day3_1()
     }
 
     fmt::print("total priority: {}\n", total_pri);
+}};
 }

@@ -1,4 +1,5 @@
 #include "common.hpp"
+#include "puzzle_reg.hpp"
 #include "day2.hpp"
 
 using namespace std;
@@ -15,12 +16,10 @@ int move_table[3][3] = {  // [op_move][result]
     {0, 1, 2},
     {1, 2, 0},
 };
-}
 
-/// @brief Calculate score for strategy with given end results
+/// Calculate score for strategy with given end results.
 /// https://adventofcode.com/2022/day/2#part2
-void day2_2()
-{
+puzzle_reg _{"2.2", []{
     int score = 0;
     for (auto const & [op_move, result]: day2::strat)
     {
@@ -29,4 +28,5 @@ void day2_2()
     }
 
     fmt::print("your total score: {}\n", score);
+}};
 }

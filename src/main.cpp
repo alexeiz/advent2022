@@ -1,30 +1,9 @@
-#include <functional>
-#include <iostream>
-#include <map>
-#include <string_view>
-
-#include <fmt/core.h>
-#include <fmt/ostream.h>
-#include <fmt/printf.h>
+#include "common.hpp"
+#include "puzzle_reg.hpp"
 
 using namespace std;
-using namespace std::literals::string_view_literals;
 
-using day_fn = function<void ()>;
-
-void day1_1();
-void day1_2();
-void day2_1();
-void day2_2();
-void day3_1();
-
-map<string_view, day_fn> puzzles = {
-    {"1.1"sv, day1_1},
-    {"1.2"sv, day1_2},
-    {"2.1"sv, day2_1},
-    {"2.2"sv, day2_2},
-    {"3.1"sv, day3_1},
-};
+auto & puzzles = puzzle_reg::puzzles;
 
 int main(int argc, char * argv[])
 {
