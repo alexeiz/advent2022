@@ -1,9 +1,4 @@
-#include <algorithm>
-#include <iostream>
-
-#include <fmt/core.h>
-#include <fmt/ostream.h>
-
+#include "common.hpp"
 #include "day1.hpp"
 
 using namespace std;
