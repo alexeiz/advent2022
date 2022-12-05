@@ -16,7 +16,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif ()
 
 # set compiler flags
-set(CMAKE_CXX_STANDARD   20)
+set(CMAKE_CXX_STANDARD   23)
 set(CMAKE_CXX_EXTENSIONS OFF)
 string(REPLACE "-std=c++11" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
@@ -42,7 +42,8 @@ list(APPEND LIBRARIES ${fmt_LIBRARIES})
 # include directories and source files
 include_directories(include)
 set(SOURCES
-    src/main.cpp)
+    src/main.cpp
+    src/day1_1.cpp)
 
 # executable
 add_executable(advent22 ${SOURCES})
