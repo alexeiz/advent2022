@@ -1,7 +1,7 @@
 #pragma once
 
 namespace day1 {
-constexpr int calories[] = {
+inline constexpr int calories[] = {
     5794,
     5879,
     4899,
