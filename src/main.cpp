@@ -14,8 +14,8 @@ using day_fn = function<void ()>;
 
 void day1_1();
 
-map<string_view, day_fn> days = {
-    {"1.1", day1_1},
+map<string_view, day_fn> puzzles = {
+    {"1.1"sv, day1_1},
 };
 
 int main(int argc, char * argv[])
@@ -26,4 +26,13 @@ int main(int argc, char * argv[])
         return 1;
     }
 
+    auto puz_name = argv[1];
+    auto puzzle = puzzles.find(puz_name);
+    if (puzzle == puzzles.end())
+    {
+        fmt::print(cerr, "puzzle '{}' not found\n", puz_name);
+        return 1;
+    }
+
+    puzzle->second();
 }
