@@ -25,7 +25,7 @@ puzzle_reg _{"5.2", []{
         }
     }
 
-    for (auto const &st: day5::stacks)
+    for (auto const & st: day5::stacks)
         fmt::print("{}", st.back());
 
     fmt::print("\n");

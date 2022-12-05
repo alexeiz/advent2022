@@ -13,6 +13,7 @@ namespace day5 {
 // [L] [P] [H] [D] [L] [F] [D] [J] [L]
 // [D] [T] [V] [M] [J] [N] [F] [M] [G]
 //  1   2   3   4   5   6   7   8   9
+
 inline std::vector<std::vector<char>> stacks = {
     {'D', 'L', 'J', 'R', 'V', 'G', 'F'},
     {'T', 'P', 'M', 'B', 'V', 'H', 'J', 'S'},
