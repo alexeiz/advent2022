@@ -11,18 +11,10 @@ namespace {
 puzzle_reg _{"5.2", []{
     for (auto [num, from, to]: day5::move_instr)
     {
-        vector<int> temp;
-        for ([[maybe_unused]] auto _: views::iota(0, num))
-        {
-            temp.push_back(day5::stacks[from - 1].back());
-            day5::stacks[from - 1].pop_back();
-        }
-
-        for ([[maybe_unused]] auto _: views::iota(0, num))
-        {
-            day5::stacks[to - 1].push_back(temp.back());
-            temp.pop_back();
-        }
+        auto & from_st = day5::stacks[from - 1];
+        auto & to_st = day5::stacks[to - 1];
+        ranges::copy(views::drop(from_st, from_st.size() - num), back_inserter(to_st));
+        from_st.erase(from_st.end() - num, from_st.end());
     }
 
     for (auto const & st: day5::stacks)
