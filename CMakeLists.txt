@@ -52,7 +52,8 @@ set(SOURCES
     src/day4_1.cpp
     src/day4_2.cpp
     src/day5_1.cpp
-    src/day5_2.cpp)
+    src/day5_2.cpp
+    src/day6_1.cpp)
 
 # executable
 add_executable(advent22 ${SOURCES})
