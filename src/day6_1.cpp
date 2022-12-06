@@ -3,7 +3,6 @@
 #include "day6.hpp"
 
 using namespace std;
-namespace views = ranges::views;
 
 namespace {
 /// Find the start-of-packet marker.
@@ -11,23 +10,20 @@ namespace {
 puzzle_reg _{"6.1", []{
     constexpr int marker_len = 4;
     auto datastream = string_view(day6::datastream);
-    vector<char> marker{datastream.begin(), datastream.begin() + marker_len};
 
-    int pos = marker_len;
-    for (auto c: datastream | views::drop(marker_len))
+    auto marker = datastream.begin();
+    auto marker_end = datastream.begin() + marker_len;
+
+    for (; marker_end != datastream.end(); ++marker, ++marker_end)
     {
-        if (marker[0] != marker[1] && marker[0] != marker[2] && marker[0] != marker[3] &&
-            marker[1] != marker[2] && marker[1] != marker[3] &&
-            marker[2] != marker[3])
+        if (*marker != *(marker + 1) && *marker != *(marker + 2) && *marker != *(marker + 3) &&
+            *(marker + 1) != *(marker + 2) && *(marker + 1) != *(marker + 3) &&
+            *(marker + 2) != *(marker + 3))
         {
             break;
         }
-
-        ++pos;
-        ranges::rotate(marker, marker.begin() + 1);
-        marker.back() = c;
     }
 
-    fmt::print("Start of packet marker at pos: {}\n", pos);
+    fmt::print("Start of packet marker at pos: {}\n", marker_end - datastream.begin());
 }};
 }
