@@ -1,6 +1,7 @@
 #pragma once
 
 #include <algorithm>
+#include <cassert>
 #include <exception>
 #include <functional>
 #include <iostream>
@@ -16,3 +17,6 @@
 
 #include <fmt/core.h>
 #include <fmt/ostream.h>
+
+template<class... Ts> struct overloaded : Ts... { using Ts::operator()...; };
+template<class... Ts> overloaded(Ts...) -> overloaded<Ts...>;
