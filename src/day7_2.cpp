@@ -21,13 +21,7 @@ puzzle_reg _{"7.2", []{
     int space_find = space_needed - (space_total - *dir_sizes.begin());
     assert(space_find > 0);
 
-    int delete_size = 0;
-    for (int s: dir_sizes)
-        if (space_find < s)
-            delete_size = s;
-        else
-            break;
-
+    int delete_size = *prev(dir_sizes.upper_bound(space_find));
     fmt::print("Size of directory to delete: {}\n", delete_size);
 }};
 }
