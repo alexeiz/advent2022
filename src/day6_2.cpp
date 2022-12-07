@@ -15,24 +15,29 @@ puzzle_reg _{"6.2", []{
     auto message_end = datastream.begin() + message_len;
 
     int chrs[0x80] = {};
-    for (int c: span{message, message_end})
-        ++chrs[c];
+    int uniqs = 0;
 
-    auto check_uniq = [](span<int> const & sc) {
-        return ranges::all_of(sc, [](int v) {return v <= 1;});
+    auto set_char = [&](int c) {
+        if (chrs[c]++ == 0)
+            ++uniqs;
     };
 
-    if (!check_uniq(chrs))
-    {
-        for (auto last = prev(datastream.end()); message_end != last; ++message)
-        {
-            int a = --chrs[int(*message)];
-            int b = ++chrs[int(*message_end)];
-            ++message_end;
+    auto clear_char = [&](int c) {
+        if (--chrs[c] == 0)
+            --uniqs;
+    };
 
-            if (a == 1 && b == 1 && check_uniq(chrs))
-                break;
-        }
+    auto check_uniq = [&]() {
+        return uniqs == message_len;
+    };
+
+    for (int c: span{message, message_end})
+        set_char(c);
+
+    for (auto last = prev(datastream.end()); !check_uniq() && message_end != last; ++message, ++message_end)
+    {
+        clear_char(*message);
+        set_char(*message_end);
     }
 
     fmt::print("Start of message marker at pos: {}\n", message_end - datastream.begin());
