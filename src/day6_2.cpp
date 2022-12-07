@@ -25,15 +25,17 @@ puzzle_reg _{"6.2", []{
 
     if (!check_uniq(chrs))
     {
-        for (auto last = prev(datastream.end()); message_end != last; ++message, ++message_end)
+        for (auto last = prev(datastream.end()); message_end != last; ++message)
         {
             int a = --chrs[int(*message)];
             int b = ++chrs[int(*message_end)];
+            ++message_end;
+
             if (a == 1 && b == 1 && check_uniq(chrs))
                 break;
         }
     }
 
-    fmt::print("Start of message marker at pos: {}\n", message_end - datastream.begin() + 1);
+    fmt::print("Start of message marker at pos: {}\n", message_end - datastream.begin());
 }};
 }
