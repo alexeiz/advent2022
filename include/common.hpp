@@ -5,6 +5,7 @@
 #include <iostream>
 #include <iterator>
 #include <ranges>
+#include <span>
 #include <string_view>
 #include <vector>
 
