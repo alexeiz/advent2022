@@ -3,7 +3,6 @@
 #include "day3.hpp"
 
 using namespace std;
-namespace views = ranges::views;
 
 namespace {
 /// Calculate priority of misplaced items.

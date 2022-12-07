@@ -3,7 +3,6 @@
 #include "day6.hpp"
 
 using namespace std;
-namespace views = ranges::views;
 
 namespace {
 /// Find the start-of-message marker.

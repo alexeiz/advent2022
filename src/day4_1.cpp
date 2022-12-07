@@ -3,7 +3,6 @@
 #include "day4.hpp"
 
 using namespace std;
-namespace views = ranges::views;
 
 namespace {
 /// Count the number of fully overlapping section ranges.

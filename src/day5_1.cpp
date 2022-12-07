@@ -3,7 +3,6 @@
 #include "day5.hpp"
 
 using namespace std;
-namespace views = ranges::views;
 
 namespace {
 /// Which crate will end up on top of each stack after rearrangement.
