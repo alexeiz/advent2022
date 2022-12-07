@@ -75,10 +75,11 @@ puzzle_reg _{"7.1", []{
     compute_sizes(root, dir_sizes);
 
     int sum = 0;
+    constexpr int limit = 100000;
     for (int s: dir_sizes)
-        if (s < 100000)
+        if (s < limit)
             sum += s;
 
-    fmt::print("Total sum of dir sizes <100000: {}\n", sum);
+    fmt::print("Total sum of dir sizes <{}: {}\n", limit, sum);
 }};
 }
