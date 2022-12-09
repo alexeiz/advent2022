@@ -29,6 +29,17 @@ inline constexpr motion test_motions[] = {
     {R, 2},
 };
 
+inline constexpr motion test_motions2[] = {
+    {R, 5},
+    {U, 8},
+    {L, 8},
+    {D, 3},
+    {R, 17},
+    {D, 10},
+    {L, 25},
+    {U, 20},
+};
+
 inline constexpr motion motions[] = {
     {L, 2},
     {D, 2},
