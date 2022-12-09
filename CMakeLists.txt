@@ -43,22 +43,15 @@ list(APPEND LIBRARIES ${fmt_LIBRARIES})
 include_directories(include)
 set(SOURCES
     src/main.cpp
-    src/day1_1.cpp
-    src/day1_2.cpp
-    src/day2_1.cpp
-    src/day2_2.cpp
-    src/day3_1.cpp
-    src/day3_2.cpp
-    src/day4_1.cpp
-    src/day4_2.cpp
-    src/day5_1.cpp
-    src/day5_2.cpp
-    src/day6_1.cpp
-    src/day6_2.cpp
-    src/day7_1.cpp
-    src/day7_2.cpp
-    src/day8_1.cpp
-    src/day8_2.cpp)
+    src/day1_1.cpp src/day1_2.cpp
+    src/day2_1.cpp src/day2_2.cpp
+    src/day3_1.cpp src/day3_2.cpp
+    src/day4_1.cpp src/day4_2.cpp
+    src/day5_1.cpp src/day5_2.cpp
+    src/day6_1.cpp src/day6_2.cpp
+    src/day7_1.cpp src/day7_2.cpp
+    src/day8_1.cpp src/day8_2.cpp
+    src/day9_1.cpp)
 
 # executable
 add_executable(advent22 ${SOURCES})
