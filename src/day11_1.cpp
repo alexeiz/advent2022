@@ -16,7 +16,7 @@ puzzle_reg _{"11.1", []{
         int mi = 0;
         for (auto & m: monkeys)
         {
-            for (int it: m.items)
+            for (auto it: m.items)
             {
                 it = m.op(it) / 3;
                 monkeys[it % m.div == 0 ? m.true_case : m.false_case].items.push_back(it);
