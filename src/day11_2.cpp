@@ -5,7 +5,7 @@
 using namespace std;
 
 namespace {
-///
+/// Find the level of monkey business.
 /// https://adventofcode.com/2022/day/11#part2
 puzzle_reg _{"11.2", []{
     auto & monkeys = day11::monkeys;
