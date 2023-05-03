@@ -3,7 +3,7 @@
 #include <array>
 
 namespace day12 {
-constexpr int test_map_sy = 8;
+inline constexpr int test_map_sy = 8;
 inline char test_map[][test_map_sy + 1] = {
     "Sabqponm",
     "abcryxxl",
@@ -11,9 +11,9 @@ inline char test_map[][test_map_sy + 1] = {
     "acctuvwj",
     "abdefghi",
 };
-constexpr int test_map_sx = std::ssize(test_map);
+inline constexpr int test_map_sx = std::ssize(test_map);
 
-constexpr int map_sy = 113;
+inline constexpr int map_sy = 113;
 inline char map[][map_sy + 1] = {
     "abcccccccaaaaaaaaccccccccccaaaaaaccccccaccaaaaaaaccccccaacccccccccaaaaaaaaaaccccccccccccccccccccccccccccccccaaaaa",
     "abcccccccaaaaaaaaacccccccccaaaaaacccccaaacaaaaaaaaaaaccaacccccccccccaaaaaaccccccccccccccccccccccccccccccccccaaaaa",
@@ -57,5 +57,5 @@ inline char map[][map_sy + 1] = {
     "abccccaacaaaaacccaaaaacccccaaaaaaaacaaaaaaaaaaaaaaaccccaaaaccaaaacccccccccccccccccccccccaccccccccccccccccccaaaaaa",
     "abccccaaaaaaaaccccccccccccccccaaccccaacaaaaaaaaaaaaaaccaaaaccccaaacccccccccccccccccccccccccccccccccccccccccaaaaaa",
 };
-constexpr int map_sx = std::ssize(map);
+inline constexpr int map_sx = std::ssize(map);
 }  // namespace day12
