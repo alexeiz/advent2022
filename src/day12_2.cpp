@@ -5,26 +5,27 @@
 using namespace std;
 
 namespace {
-/// Hill climbing
-/// https://adventofcode.com/2022/day/12
-puzzle_reg _{"12.1", []{
+/// Fewest steps hill climbing
+/// https://adventofcode.com/2022/day/12#part2
+puzzle_reg _{"12.2", []{
     auto height_map = day12::map;
     auto map_sx = day12::map_sx;
     auto map_sy = day12::map_sy;
 
     // find starting point
-    int start_x = 0;
-    int start_y = 0;
+    vector<tuple<int, int>> horizon;
+    vector<vector<int>> path_map{size_t(map_sx), vector<int>(size_t(map_sy), 0)};
+
     int end_x = 0;
     int end_y = 0;
     for (int x = 0; x != map_sx; ++x)
         for (int y = 0; y != map_sy; ++y)
         {
-            if (height_map[x][y] == 'S')
+            if (height_map[x][y] == 'S' or height_map[x][y] == 'a')
             {
-                start_x = x;
-                start_y = y;
                 height_map[x][y] = 'a';
+                path_map[x][y] = 1;
+                horizon.emplace_back(x, y);
             }
             else if (height_map[x][y] == 'E')
             {
@@ -34,12 +35,8 @@ puzzle_reg _{"12.1", []{
             }
         }
 
-    vector<vector<int>> path_map{size_t(map_sx), vector<int>(size_t(map_sy), 0)};
-    path_map[start_x][start_y] = 1;
-
     auto fill_path_astar = [&]{
         vector<tuple<int, int>> dxdy{{1, 0}, {0, -1}, {0, 1}, {-1, 0}};
-        vector<tuple<int, int>> horizon{{start_x, start_y}};
 
         while (horizon.size())
         {
@@ -70,6 +67,6 @@ puzzle_reg _{"12.1", []{
     };
 
     fill_path_astar();
-    fmt::print("Number of steps: {}\n", path_map[end_x][end_y] - 1);
+    fmt::print("Fewest number of steps: {}\n", path_map[end_x][end_y] - 1);
 }};
 }

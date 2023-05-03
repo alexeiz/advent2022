@@ -4,7 +4,7 @@
 
 namespace day12 {
 constexpr int test_map_sy = 8;
-char test_map[][test_map_sy + 1] = {
+inline char test_map[][test_map_sy + 1] = {
     "Sabqponm",
     "abcryxxl",
     "accszExk",
@@ -14,7 +14,7 @@ char test_map[][test_map_sy + 1] = {
 constexpr int test_map_sx = std::ssize(test_map);
 
 constexpr int map_sy = 113;
-char map[][map_sy + 1] = {
+inline char map[][map_sy + 1] = {
     "abcccccccaaaaaaaaccccccccccaaaaaaccccccaccaaaaaaaccccccaacccccccccaaaaaaaaaaccccccccccccccccccccccccccccccccaaaaa",
     "abcccccccaaaaaaaaacccccccccaaaaaacccccaaacaaaaaaaaaaaccaacccccccccccaaaaaaccccccccccccccccccccccccccccccccccaaaaa",
     "abcccccccaaaaaaaaaaccccccccaaaaaacaaacaaaaaaaaaaaaaaaaaaccccccccccccaaaaaaccccccccccccccaaacccccccccccccccccaaaaa",
