@@ -12,7 +12,7 @@ $ cd ..
 $ code .
 
 # or do it manually
-$ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE:FILEPATH=conan_toolchain.cmake -S.. -B. -G Ninja
+$ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE --preset conan-debug ..
 ```
 
 ## Run puzzle solvers
