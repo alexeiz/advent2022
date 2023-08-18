@@ -4,15 +4,14 @@
 
 ```shell
 $ mkdir build
-$ cd build
-$ conan install .. -s build_type=Debug --build=fmt/10.0.0
+$ conan install . --output-folder=build --build=missing -s build_type=Debug
 
 # make vscode configure automatically
-$ cd ..
 $ code .
 
 # or do it manually
-$ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE --preset conan-debug ..
+$ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE --preset conan-debug .
+$ cmake --build build
 ```
 
 ## Run puzzle solvers
