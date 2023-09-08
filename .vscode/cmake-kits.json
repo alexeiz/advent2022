@@ -1,6 +1,0 @@
-[
-    {
-        "name": "conan",
-        "toolchainFile": "build/conan_toolchain.cmake"
-    }
-]
